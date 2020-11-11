@@ -107,7 +107,7 @@ def bot():
             s = requests.session()
             random_proxy = proxy1.FormatProxy()
 
-            resp = s.get("https://m.youtube.com/watch?v=" + token + "?disable_polymer=1",headers={'Host': 'm.youtube.com', 'Proxy-Connection': 'Keep-Alive', 'User-Agent': ua, 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'Accept-Language': 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7', 'Accept-Encoding': 'gzip, deflate', 'Cache-Control': 'no-cache', 'Pragma': 'no-cache'},proxies=random_proxy)   # simple get request to youtube for the base URL
+            resp = s.get("https://m.youtube.com/watch?v=iMoXfCJ7AbQ" + token + "?disable_polymer=1",headers={'Host': 'm.youtube.com', 'Proxy-Connection': 'Keep-Alive', 'User-Agent': ua, 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'Accept-Language': 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7', 'Accept-Encoding': 'gzip, deflate', 'Cache-Control': 'no-cache', 'Pragma': 'no-cache'},proxies=random_proxy)   # simple get request to youtube for the base URL
             url = resp.text.split(r'videostatsWatchtimeUrl\":{\"baseUrl\":\"')[1].split(r'\"}')[0].replace(r"\\u0026",r"&").replace('%2C',",").replace("\/","/")  #getting the base url for parsing
             cl = url.split("cl=")[1].split("&")[0] #parsing some infos for the URL
             ei = url.split("ei=")[1].split("&")[0]
